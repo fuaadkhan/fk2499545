@@ -9,6 +9,10 @@
 #include <iostream>
 using namespace std;
 
+//Global constants
+
+//Function Prototype
+
 //Execution begins here!
 int main() {
     //Declare Variables
@@ -18,11 +22,11 @@ int main() {
     cout<<"Hello\n";
     cout<<"Press return after entering a number.\n";
     cout<<"Enter the number of pods:\n";
-    
     cin>>number_of_pods;
     
     cout<<"Enter the number of peas in a pod:\n";
     cin>>peas_per_pod;
+    
     total_peas = number_of_pods*peas_per_pod;
     
     cout<<"If you have ";
