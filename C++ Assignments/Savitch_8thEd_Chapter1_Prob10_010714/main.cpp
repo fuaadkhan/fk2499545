@@ -15,6 +15,7 @@ using namespace std;
 
 //Execution begins here!
 int main() {
+    //Declare Variables
     char charac;
     
     cout<<"Type a character and press ENTER\n";
