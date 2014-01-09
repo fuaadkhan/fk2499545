@@ -11,6 +11,7 @@ using namespace std;
 
 //Execution begins here!
 int main() {
+    //Declare Variables
     int number_of_pods, peas_per_pod, total_peas;
     
     //Greet the user
