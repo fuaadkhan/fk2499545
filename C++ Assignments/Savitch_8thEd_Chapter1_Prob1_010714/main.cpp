@@ -3,6 +3,7 @@
  * Author: Fuaad Khan
  * Created on January 7, 2014, 7:05 PM
  * Count the number of peas in all pods
+ * Savitch Chapter 1, Problem 1
  */
 
 //System Libraries
@@ -11,6 +12,7 @@ using namespace std;
 
 //Execution begins here!
 int main() {
+    //Declare Variables
     int number_of_pods, peas_per_pod, total_peas;
     
     cout<<"Press return after entering a number.\n";
