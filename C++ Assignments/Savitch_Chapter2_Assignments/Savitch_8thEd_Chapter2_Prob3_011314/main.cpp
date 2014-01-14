@@ -15,20 +15,19 @@ using namespace std;
 //Execution begins here!
 int main(int argc, char** argv) {
     //Declare variables
-    float preSal, pmSal, posSal, nAnnsal, nMonsal, payIn;
-    payIn = 0.076;
+    float preSal, months, retrpay, nAnnsal, nMonsal, payIn=0.076;
     
     cout<<"Input your previous annual salary:"<<endl;
     cin>>preSal;
     
-    pmSal = preSal/12;
-    nMonsal = (pmSal*payIn)*6;
-    nAnnsal = ((pmSal*6)+nMonsal);
+    retrpay = preSal*(payIn/2);
+    nAnnsal = (preSal*(1+payIn));
+    nMonsal = nAnnsal/12;
     
+    cout<<"The new retroactive pay is "<<retrpay<<endl;
     cout<<"The new monthly salary is "<<nMonsal<<endl;
     cout<<"The new annual salary is "<<nAnnsal<<endl;
     
-
     return 0;
 }
 
