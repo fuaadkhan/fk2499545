@@ -1,0 +1,9 @@
+Exception: STATUS_STACK_OVERFLOW at eip=004016BB
+eax=005AA220 ebx=0022AC5C ecx=00032C30 edx=00000000 esi=00000000 edi=0022CD84
+ebp=0022AC38 esp=0022AC24 program=C:\Users\rcc\Documents\NetBeansProjects\Bubble_sort\dist\Debug\Cygwin_4.x-Windows\bubble_sort.exe, pid 2920, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022AC38  004016BB (00000001, 0022AC5C, 20010100, 61007F58)
+0022ACF8  61007FB5 (00000000, 0022CD84, 61007120, 00000000)
+End of stack trace
