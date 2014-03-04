@@ -1,101 +1,87 @@
 /* 
  * File:   main.cpp
- * Author: rcc
- *
- * Created on March 3, 2014, 11:28 AM
+ * Author: Fuaad
+ * Created on March 1, 2014, 11:28 AM
+ * Luhn's Algorithm
  */
 
-#include <cstdlib>
-//libraries
+//System Libraries
 #include <cstdlib>
 #include <iostream>
-#include <ctime>
+#include <iomanip>
 using namespace std;
+
 //Global Constants
 
-//Function Prototypes
-int * filAray(int);
-void prntAry(const int *,int);
-int * cpy(const int *,int);
-int * dubOther(int *, int);
-int * ModNum(int *, int);
-int sumNum(const int *, int, int);
-void lastChk(const int *,int);
-//Execution Begins Here
-int main(int argc, char** argv){
-//Declare Variables
-const int SIZE=11;
-    //rand number seed
-    srand(static_cast<unsigned int>(time(0)));
-    int *array=filAray(SIZE);
-    int *brray=cpy(array,SIZE);
+//Function prototypes
+string input();
+bool Num(string);
+bool luhnChk(string);
+
+//Execution begins here!
+int main(int argc, char** argv) {
+    string accNum;
+    
+    //Loop until input is Valid
+    do{
+        //Get Input
+        accNum = input();    
+    }while(!luhnChk(accNum));
+
+    cout<<endl<<"Your account number is valid.";
+    //Exit Stage Right
+    return 0;
+}
+
+//Get User input and output as string
+string input(){
+    string acc;
+    do{
+        cout<<"Please enter your account number: ";
+        getline(cin,acc);
+    }while(!Num(acc));
+    return acc;
+}
+bool Num(string a){
+    //Check input to make sure that the account number is 11 digits
+    if(a.length()!=11){
+        cout<<"ERROR: Your account Number should be 11 Digits."<<endl;
+        return false;
+    }
+    
+    //Check input to make sure they are numbers
+    for(int i=0; i<a.length();i++){
+        if(((a[i]-'0')<0)||((a[i]-'0')>9)){
+            cout<<"ERROR: Please input only numbers."<<endl;
+            return false;
+        }    
+    }
+    return true;
+}
+bool luhnChk(string a){
     int sum=0;
-    //print
-    prntAry(array, SIZE);
-    brray=dubOther(brray,SIZE);
-    prntAry(brray, SIZE);
-    brray=ModNum(brray,SIZE);
-    prntAry(brray,SIZE);
-    sum=sumNum(brray,SIZE,sum);
-    cout<<"The sum of the numbers is "<<sum<<endl;
-    lastChk(brray,sum);   
-
-
-    delete [] array;
-    delete [] brray;
-return 0;
-}
-int *filAray(int n){
-
-    //allocate dynamic memory
-    int * a=new int[n];
-    for(int i=0;i<n;i++){
-     *(a+i)=rand()%9+1;
+    int temp=0;
+    
+//Get the sum
+    for(int i=0;i<(a.length()-1);i++){
+        //If Odd then double that element
+        if(i%2)
+            temp = (a[i]-'0')*2;
+        //If Even then don't double that element
+        else
+            temp = (a[i]-'0');
+        //If the doubling puts the element over 9 add the two digits together
+        if(temp>=10)
+            temp = 1+(temp%10);
+        //Add result to sum
+        sum += temp;
     }
-    return a;
-}
-void prntAry(const int *a,int n){
-    //output array
-    for(int i=0;i<n;i++){
-        cout<<*(a+i)<<" ";
+    
+//check (sum*9)%10 against the 11th digit
+    if((a[a.length()-1]-'0')==(sum*9)%10)
+        return true;
+    else{
+        cout<<"ERROR: Your account number failed the check sum."<<endl;
+        return false;
     }
-    cout<<endl;
-}
-int *cpy(const int *a,int n){
-    //copy arrray to brray
-    int * b=new int [n];
-    for(int i=0;i<n;i++){
-       *(b+i)=*(a+i);
-    }
-    return b;
-}
-int * dubOther(int * a, int n){
-//double positon 1,3,5,7,9;
-for(int i=1;i<n;i++){	
-        a[i]*=2;
-        i++;
-        }
-  return a;
-}
-int * ModNum(int * a, int n){
-    for(int i=0;i<n;i++){
-        if(a[i]>=10){	
-        a[i]=(a[i]%10)+1;
-        }
-    }
-  return a;
-}
-int sumNum(const int * a, int n,int sum){
-    for(int i=0;i<n;i++){
-    sum+=a[i];
-    }
-  return sum;
-}
-void lastChk(const int *a, int sum){
-    sum=sum*9;
-    cout<<"sum * 9 = "<<sum<<endl;
-    sum=sum%10;
-    if(sum==*(a+10))cout<<"Your credit card number is valid, check digit! "<<sum<<endl;
-    else cout<<"Your credit card number is invalid, your digit "<<sum
-             <<"\nRequired check digit "<<*(a+10)<<endl;    
 }
