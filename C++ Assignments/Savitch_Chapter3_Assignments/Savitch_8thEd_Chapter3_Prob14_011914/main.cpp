@@ -16,7 +16,7 @@ using namespace std;
 
 //Execution begins here!
 int main(int argc, char** argv) {
-    
+    //Finds all the prime numbers from 3-100
     for (int i=2; i<100; i++) 
         for (int j=2; j<i; j++)
         {

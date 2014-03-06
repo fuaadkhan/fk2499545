@@ -22,32 +22,32 @@ int main() {
     cout<<"Type a character and press ENTER\n";
     cin>>charac;
     
-    cout<<"\n";
+    cout<<endl;
     cout<<"   ";
     cout<<charac;
     cout<<" ";
     cout<<charac;
     cout<<" ";
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;
     
     cout<<" ";
     cout<<charac;
     cout<<"     ";
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;;
     
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;;
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;;
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;
     cout<<" ";
     cout<<charac;
     cout<<"     ";
     cout<<charac;
-    cout<<"\n";
+    cout<<endl;;
     
     cout<<"   ";
     cout<<charac;

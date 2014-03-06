@@ -35,9 +35,8 @@ int main(int argc, char** argv) {
     if (numb<100||numb>120){
         cout<<"error: Invalid number. The number you have inputed"
                 " is less than 100 or greater than 120. Please Try again"<<endl;
-        cin>>numb;
     }
-    
+    cin>>numb;
     }while (numb<100||numb>120);
     
     cout<<"Input an adjective :"<<endl;
@@ -53,7 +52,7 @@ int main(int argc, char** argv) {
     cout<<"I am sorry that I am unable to turn in my homework at this time. First,"<<endl;
     cout<<"I ate a rotten "<<food<<", which made me turn "<<color<<" and extremely ill. I"<<endl;
     cout<<"came down with a fever of "<<numb<<"."<<"Next, my "<<adj<<" pet"<<endl;
-    cout<<anim<<" must have smelled the remains of the "<<food<<" on my homowrk,"<<endl;
+    cout<<anim<<" must have smelled the remains of the "<<food<<" on my homework,"<<endl;
     cout<<"because he ate it. I am currently rewriting my homework and hope you"<<endl;
     cout<<"will accept it late"<<endl;
     cout<<" "<<endl;

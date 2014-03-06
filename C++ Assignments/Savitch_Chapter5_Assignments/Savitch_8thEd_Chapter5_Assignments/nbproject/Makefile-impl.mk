@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=MenuForFutureHmwkAndTests
+PROJECTNAME=Savitch_8thEd_Chapter5_Assignments
 
 # Active Configuration
 DEFAULTCONF=Debug
