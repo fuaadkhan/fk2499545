@@ -24,19 +24,19 @@ public class Encryption {
         
         //Day of the Month
         System.out.print("Enter the day of the month: ");
-        int cipherShift = input.nextInt();
+        int day = input.nextInt();
         
         input.close();
         
         // Method to Encrypt message
-        cipherShift %= 15;
+        day %= 15;
         
         String encoded= "";
         
         // Looping through each character and shifting
         for (int i = 0; i!= messageEnc.length(); i++) {
            int currentChar = messageEnc.charAt(i);
-           for(int j = 0; j != cipherShift; j++) {
+           for(int j = 0; j != day; j++) {
         	   --currentChar;
               if (currentChar < 65)
                  currentChar = 90;
